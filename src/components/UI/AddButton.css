@@ -1,0 +1,11 @@
+.AddButton {
+  color: white;
+  width: 100px;
+  height: 30px;
+  background-color: purple;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
