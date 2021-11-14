@@ -1,15 +1,23 @@
 import React from 'react';
 import './UsersList.css';
+import UserItem from './UserItem'
 
-const UsersList = () => {
+const UsersList = (props) => {
+    console.log(props.onRefreshedList)
+  
+    return <ul className="UsersList">
+        
+        {props.onRefreshedList.map((user) => (
+            
+            <UserItem
+                key={user.id}
+                name={user.name}
+                age={user.age}
+                country={user.country}
+            />
+        ))}
 
-    return <div class="UsersList">
-
-        <div>Manolito Paredes 36 España</div>
-        <div>Manolito Paredes 36 España</div>
-        <div>Manolito Paredes 36 España</div>
-
-    </div>
+    </ul>
 
 
 };

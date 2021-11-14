@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import './AddButton.css'
 const AddButton = () => {
 
+ 
+
     return <div>
-        <button class="AddButton" type="submit">Add user</button>
+        <button className="AddButton" type="submit">Add user</button>
     </div>
 
 }
