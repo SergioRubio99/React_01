@@ -7,7 +7,7 @@ const UserItem = (props) => {
 
     console.log(`From UserItem: ${console.log(props)}`)
     return <button onClick={deleteHandler} className="userItem">
-        <p className="userParagraph">{props.name}, {props.age} de edad, {props.country}</p>
+        <p className="userParagraph">{props.name}, {props.age} años de edad, {props.country}</p>
     </button>
 }
 
