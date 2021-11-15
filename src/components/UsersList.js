@@ -7,7 +7,7 @@ const UsersList = (props) => {
 
     if (props.onRefreshedList.length === 0) {
         return <ul className="UsersList">
-            <p>Todo vacío</p>
+            <p>The list is empty!</p>
         </ul>
     }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import NewUser from './components/NewUser'
-import UsersList from './components/UsersList.js'
+import UsersList from './components/UsersList'
+import PopUp from './components/UI/PopUp'
 import './App.css'
 
 
@@ -31,16 +32,16 @@ const userList = [
 function App() {
 
   const [list, refreshedList] = useState(userList);
-// console.log(list)
+  // console.log(list)
 
-  
-const deleteUserHandler = userId => {
-  refreshedList(prevUsers => {
-    const updatedUsers = prevUsers.filter(user => user.id !== userId);
-    return updatedUsers;
-  });
-};
-  
+
+  const deleteUserHandler = userId => {
+    refreshedList(prevUsers => {
+      const updatedUsers = prevUsers.filter(user => user.id !== userId);
+      return updatedUsers;
+    });
+  };
+
   const collectNewObject = (user) => {
 
     console.log(user)
@@ -51,9 +52,10 @@ const deleteUserHandler = userId => {
 
 
   return (
-    <div>
-      <NewUser onCollectNewObject={collectNewObject} />
-      <UsersList onRefreshedList={list} onDeleteUserHandler={deleteUserHandler}/>
+    <div className="App">
+      <NewUser onCollectNewObject={collectNewObject} className="NewUser"/>
+      <UsersList onRefreshedList={list} onDeleteUserHandler={deleteUserHandler} className="UsersList" />
+      <PopUp/>
     </div>
   );
 }

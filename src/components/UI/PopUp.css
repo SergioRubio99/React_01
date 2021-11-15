@@ -1,0 +1,51 @@
+.Fade {
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0px;
+  transition: all 300ms;
+}
+
+.PopUp {
+  height: 160px;
+  width: 40vw;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 7px;
+  margin-top: 143px;
+  transition: all 300ms;
+}
+
+.PopUp__up {
+  padding: 15px;
+  color: white;
+  border-radius: 5px 5px 0px 0px;
+  background-color: rgb(47, 47, 47);
+  height: 40%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.PopUp__down {
+  border-radius: 0px 0px 7px 7px;
+  height: 60%;
+  background-color: rgb(141, 141, 141);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.PopUp__down > button {
+  color: white;
+  background-color: rgb(47, 47, 47);
+  border: none;
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  cursor:pointer; 
+}
