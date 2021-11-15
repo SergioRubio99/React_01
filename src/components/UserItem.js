@@ -1,10 +1,14 @@
 import './UserItem.css'
 
 const UserItem = (props) => {
+    const deleteHandler = () => {
+        props.onDelete(props.id);
+      };
+
     console.log(`From UserItem: ${console.log(props)}`)
-    return <div className = "userItem">
+    return <button onClick={deleteHandler} className="userItem">
         <p className="userParagraph">{props.name}, {props.age} de edad, {props.country}</p>
-    </div>
+    </button>
 }
 
 export default UserItem;

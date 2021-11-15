@@ -13,13 +13,13 @@ const userList = [
     id: 'e' + Math.random().toString() * 10,
     name: 'Max',
     age: 32,
-    country: 'The Netherlands'
+    country: 'Netherlands'
   },
   {
     id: 'e' + Math.random().toString() * 10,
     name: 'Robert',
     age: 21,
-    country: 'The UK'
+    country: 'United Kingdom'
   },
   {
     id: 'e' + Math.random().toString() * 10,
@@ -33,6 +33,14 @@ function App() {
   const [list, refreshedList] = useState(userList);
 // console.log(list)
 
+  
+const deleteUserHandler = userId => {
+  refreshedList(prevUsers => {
+    const updatedUsers = prevUsers.filter(user => user.id !== userId);
+    return updatedUsers;
+  });
+};
+  
   const collectNewObject = (user) => {
 
     console.log(user)
@@ -45,7 +53,7 @@ function App() {
   return (
     <div>
       <NewUser onCollectNewObject={collectNewObject} />
-      <UsersList onRefreshedList={list}/>
+      <UsersList onRefreshedList={list} onDeleteUserHandler={deleteUserHandler}/>
     </div>
   );
 }
