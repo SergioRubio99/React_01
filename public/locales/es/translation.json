@@ -1,0 +1,8 @@
+{
+    "userList": {
+        "listIsEmpty": "The list is empty!"
+    },
+    "userItem": {
+        "description": "{props.name}, {props.age} years old, {props.country}"
+    }
+  }

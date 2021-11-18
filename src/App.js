@@ -9,7 +9,7 @@ const userList = [
     id: 'e' + Math.random().toString() * 10,
     name: 'Max',
     age: 32,
-    country: 'Netherlands',
+    country: 'Netherlands', 
   },
   {
     id: 'e' + Math.random().toString() * 10,

@@ -6,7 +6,7 @@ const UserItem = (props) => {
       };
 
     return <button onClick={deleteHandler} className="userItem">
-        <p className="userParagraph">{props.name}, {props.age} years old, {props.country}</p>
+        <p className="userParagraph">{t(userItem.description)}</p>
     </button>
 };
 

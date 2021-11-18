@@ -5,7 +5,7 @@ import UserItem from './UserItem';
 const UsersList = (props) => {
     if (props.onRefreshedList.length === 0) {
         return <ul className="UsersList">
-            <p>The list is empty!</p>
+            <p>{t('userList.listIsEmpty')}</p>
         </ul>
     }
 
