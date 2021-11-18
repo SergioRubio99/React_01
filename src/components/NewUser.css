@@ -1,4 +1,4 @@
-.form{
+.form {
     background-color: white;
     width: 40vw;
     border-radius:7px;
@@ -6,7 +6,7 @@
     margin-top: 20px;
 }
 
-.form__div{
+.form__div {
     font-size: 17px;
     font-weight: bold;
     margin-top: 5px;
