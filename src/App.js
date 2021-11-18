@@ -3,6 +3,9 @@ import { useState } from 'react';
 import NewUser from './components/NewUser';
 import UsersList from './components/UsersList';
 import './App.css';
+import PopUp from './components/UI/PopUp';
+import { User } from './entities/User';
+import { useTranslation, } from "react-i18next";
 
 const userList = [
   {
@@ -26,7 +29,10 @@ const userList = [
 ];
 
 function App() {
-  const [booleanPickUp, setBooleanPickUp] = useState([true, true, true]);
+  const { t } = useTranslation();
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [messages, setMessages] = useState("");
   const [list, refreshedList] = useState(userList);
   const deleteUserHandler = userId => {
     refreshedList(prevUsers => {
@@ -38,16 +44,22 @@ function App() {
     refreshedList([user, ...list])
   };
 
-  const popUpBoolean = (booleanUser, booleanAge, booleanCountry) => {
-    setBooleanPickUp([booleanUser, booleanAge, booleanCountry]);
+  const onError = (error) => {
+    const messages = User.getErrorKeys(error.errors)
+      .map(key => t(key));
+
+    setMessages(messages);
+    setShowPopup(!error.isValid);
   };
 
   return (
     <div className="App">
-      <NewUser onCollectNewObject={collectNewObject} onPopUpBoolean={popUpBoolean} className="NewUser"/>
+      <NewUser onCollectNewObject={collectNewObject} onError={onError} className="NewUser"/>
       <UsersList onRefreshedList={list} onDeleteUserHandler={deleteUserHandler} className="UsersList" />
+      {(showPopup) ? <PopUp messages={messages} />: null}
     </div>
   );
 };
 
 export default App;
+
