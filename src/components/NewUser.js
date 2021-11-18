@@ -4,27 +4,17 @@ import AddButton from './UI/AddButton';
 import PopUp from './UI/PopUp'
 import './NewUser.css';
 const NewUser = (props) => {
-    const [enteredUser, setName] = useState('');
-    const [enteredAge, setAge] = useState('');
-    const [enteredCountry, setCountry] = useState('');
 
     const [booleanUser, setBooleanUser] = useState(true);
     const [booleanAge, setBooleanAge] = useState(true);
     const [booleanCountry, setBooleanCountry] = useState(true);
-
-    const [popUpBooleanUser, setPopUpBooleanUser] = useState(false);
-    const [popUpBooleanAge, setPopUpBooleanAge] = useState(false);
-    const [popUpBooleanCountry, setPopUpBooleanCountry] = useState(false);
-
-    const [popUpBooleanRender, setPopUpBooleanRender] = useState(false)
-
 
     const userRegEx = /(^[A-ZÁÉÍÓÚ][a-záéíóú]{1,15}$)/;
     const ageRegEx = /^(([1][89])|([2-9][0-9]))|([1][01][0-9])$/;
     const countryRegEx = /(^[A-ZÁÉÍÓÚ]{1,3}[a-záéíóú]{1,10}$)|(^[A-ZÁÉÍÓÚ][a-záéíóú]{1,20}\s[A-ZÁÉÍÓÚa-záéíóú]{1,20}\s([A-ZÁÉÍÓÚa-záéíóú][a-záéíóú]{1,15}\s)?[A-ZÁÉÍÓÚ][a-záéíóú]{1,10}$)/;
 
     const changeName = (event) => {
-        setName(event.target[0].value);
+      
         !userRegEx.test(event.target[0].value) ? setBooleanUser(false) : setBooleanUser(true);
         console.log(event.target[0].value);
 
@@ -32,7 +22,7 @@ const NewUser = (props) => {
 
     const changeAge = (event) => {
 
-        setAge(event.target[1].value);
+      
 
         !ageRegEx.test(event.target[1].value) ? setBooleanAge(false) : setBooleanAge(true);
         console.log(event.target[1].value);
@@ -40,7 +30,7 @@ const NewUser = (props) => {
 
     const changeCountry = (event) => {
 
-        setCountry(event.target[2].value);
+    
         !countryRegEx.test(event.target[2].value) ? setBooleanCountry(false) : setBooleanCountry(true);
         console.log(event.target[2].value);
 

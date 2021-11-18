@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import NewUser from './components/NewUser'
 import UsersList from './components/UsersList'
-import PopUp from './components/UI/PopUp'
 import './App.css'
 
 
