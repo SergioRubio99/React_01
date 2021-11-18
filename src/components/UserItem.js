@@ -1,4 +1,4 @@
-import './UserItem.css'
+import './UserItem.css';
 
 const UserItem = (props) => {
     const deleteHandler = () => {
@@ -8,6 +8,6 @@ const UserItem = (props) => {
     return <button onClick={deleteHandler} className="userItem">
         <p className="userParagraph">{props.name}, {props.age} years old, {props.country}</p>
     </button>
-}
+};
 
 export default UserItem;

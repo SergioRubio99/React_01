@@ -1,10 +1,8 @@
 import React from 'react';
 import './UsersList.css';
-import UserItem from './UserItem'
+import UserItem from './UserItem';
 
 const UsersList = (props) => {
-    console.log(props.onRefreshedList)
-
     if (props.onRefreshedList.length === 0) {
         return <ul className="UsersList">
             <p>The list is empty!</p>
@@ -12,9 +10,7 @@ const UsersList = (props) => {
     }
 
     return <ul className="UsersList">
-
         {props.onRefreshedList.map((user) => (
-
             <UserItem
                 id={user.id}
                 name={user.name}
@@ -23,11 +19,7 @@ const UsersList = (props) => {
                 onDelete={props.onDeleteUserHandler}
             />
         ))}
-
     </ul>
-
-
 };
-
 
 export default UsersList;
