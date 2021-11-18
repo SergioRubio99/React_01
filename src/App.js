@@ -30,6 +30,7 @@ const userList = [
   }
 ]
 function App() {
+  const [booleanPickUp, setBooleanPickUp] = useState([true, true, true]);
 
   const [list, refreshedList] = useState(userList);
   // console.log(list)
@@ -37,8 +38,7 @@ function App() {
 
   const deleteUserHandler = userId => {
     refreshedList(prevUsers => {
-      const updatedUsers = prevUsers.filter(user => user.id !== userId);
-      return updatedUsers;
+      return prevUsers.filter(user => user.id !== userId);
     });
   };
 
@@ -50,12 +50,18 @@ function App() {
     console.log(list)
   }
 
+  const popUpBoolean = (booleanUser, booleanAge, booleanCountry) => {
+
+    setBooleanPickUp([booleanUser, booleanAge, booleanCountry]);
+    console.log('popUpBoolean -->' + booleanPickUp );
+
+}
 
   return (
     <div className="App">
-      <NewUser onCollectNewObject={collectNewObject} className="NewUser"/>
+      <NewUser onCollectNewObject={collectNewObject} onPopUpBoolean={popUpBoolean} className="NewUser"/>
       <UsersList onRefreshedList={list} onDeleteUserHandler={deleteUserHandler} className="UsersList" />
-      <PopUp/>
+   
     </div>
   );
 }
