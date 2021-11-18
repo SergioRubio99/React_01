@@ -1,0 +1,34 @@
+{
+    "userList": {
+        "listIsEmpty": "Lista vacia!"
+    },
+    "userItem": {
+        "description": "{{name}}, {{age}} años, {{country}}"
+    },
+    "addButton": {
+        "addUser": "Añadir usuario"
+    },
+    "newUser": {
+        "username": {
+            "label": "Nick",
+            "placeholder": "nick..."
+        },
+        "age": {
+            "label": "Edad (Años)",
+            "placeholder": "años..."
+        },
+        "country": {
+            "label": "País",
+            "placeholder": "país..."
+        }
+    },
+     "popup": {
+        "ok": "Okay",
+        "invalidInput": "Entrada incorrecta",
+        "errors": {
+            "userName": "El nick debe seguir el formato: 'Ejemplo'",
+            "age": "Edad debe estar entre 18 y 119.",
+            "country": "El país debe tener los siguientes formatos, 'España', 'Estados Unidos de America'."
+        }
+    }
+}

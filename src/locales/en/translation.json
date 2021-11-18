@@ -1,0 +1,34 @@
+{
+    "userList": {
+        "listIsEmpty": "The list is empty!"
+    },
+    "userItem": {
+        "description": "{{name}}, {{age}} years old, {{country}}"
+    },
+    "addButton": {
+        "addUser": "Add user"
+    },
+    "newUser": {
+        "username": {
+            "label": "Username",
+            "placeholder": "username..."
+        },
+        "age": {
+            "label": "Age (Years)",
+            "placeholder": "age..."
+        },
+        "country": {
+            "label": "Country",
+            "placeholder": "country..."
+        }
+    },
+    "popup": {
+        "ok": "Okay",
+        "invalidInput": "Invalid Input",
+        "errors": {
+            "userName": "The username must follow this format: 'Example' in order to be correct.",
+            "age": "The age must be set between 18 and 119.",
+            "country": "The country must be set in one of the following formats: 'Spain', 'The United States' or 'People's Republic of China'."
+        }
+    }
+}

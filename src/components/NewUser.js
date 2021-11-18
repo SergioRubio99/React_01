@@ -2,9 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import AddButton from './UI/AddButton';
 import PopUp from './UI/PopUp'
+import { useTranslation, } from "react-i18next";
 import './NewUser.css';
 
 const NewUser = (props) => {
+    const { t } = useTranslation();
+
     const [booleanUser, setBooleanUser] = useState(true);
     const [booleanAge, setBooleanAge] = useState(true);
     const [booleanCountry, setBooleanCountry] = useState(true);
@@ -70,17 +73,17 @@ const NewUser = (props) => {
         <form onSubmit={submitHandler} className="form">
 
             <div style={{ color: booleanUser === false ? 'red' : 'black' }} className="form__div">
-                <label type="text">Username</label>
-                <input style={{ backgroundColor: booleanUser === false ? 'rgb(255, 0, 0, 0.2)' : 'white' }} placeholder="username..."  ></input>
+                <label type="text">{t('newUser.username.label')}</label>
+                <input style={{ backgroundColor: booleanUser === false ? 'rgb(255, 0, 0, 0.2)' : 'white' }} placeholder={t('newUser.username.placeholder')}  ></input>
             </div>
             <div style={{ color: booleanAge === false ? 'red' : 'black' }} className="form__div">
-                <label type="text">Age (Years)</label>
-                <input style={{ backgroundColor: booleanAge === false ? 'rgb(255, 0, 0, 0.2)' : 'white' }} placeholder="age..." maxlength="3"  ></input>
+                <label type="text">{t('newUser.age.label')}</label>
+                <input style={{ backgroundColor: booleanAge === false ? 'rgb(255, 0, 0, 0.2)' : 'white' }} placeholder={t('newUser.age.placeholder')} maxLength="3"  ></input>
             </div>
 
             <div style={{ color: booleanCountry === false ? 'red' : 'black' }} className="form__div">
-                <label type="text">Country</label>
-                <input style={{ backgroundColor: booleanCountry === false ? 'rgb(255, 0, 0, 0.2)' : 'white' }} placeholder="country..." ></input>
+                <label type="text">{t('newUser.country.label')}</label>
+                <input style={{ backgroundColor: booleanCountry === false ? 'rgb(255, 0, 0, 0.2)' : 'white' }} placeholder={t('newUser.country.placeholder')} ></input>
             </div>
 
             <AddButton onToggleUser={booleanUser} onToggleAge={booleanAge} onToggleCountry={booleanCountry} />

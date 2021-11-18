@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import PopUp from './components/UI/PopUp'
-
-import './index.css';
 import App from './App';
+import './index.css';
+import './i18n';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-// ReactDOM.render(<PopUp/>, document.querySelector('body'));
